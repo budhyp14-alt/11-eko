@@ -139,7 +139,7 @@
 
         /* --- DASHBOARD ADMIN KHUSUS --- */
         .admin-controls { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .kunci-jawaban { background: #ecfdf5; border-left: 5px solid var(--success); padding: 20px; margin-top: 20px; display: none; } /* Hanya tampil utk admin */
+        .kunci-jawaban { background: #ecfdf5; border-left: 5px solid var(--success); padding: 20px; margin-top: 20px; display: none; }
 
         @media (max-width: 768px) {
             .nav-links { justify-content: center; width: 100%; margin-top: 15px; }
@@ -190,9 +190,7 @@
     <section id="app-section">
         <nav class="navbar">
             <div class="nav-brand"><i class="fas fa-chart-line"></i> Ekonomi 11</div>
-            <div class="nav-links" id="nav-links-container">
-                <!-- Navigasi di-render via JS sesuai Role -->
-            </div>
+            <div class="nav-links" id="nav-links-container"></div>
             <div style="font-weight: 600; color: var(--dark);">
                 <i class="fas fa-user-circle"></i> <span id="display-username"></span> | 
                 <button onclick="logout()" class="btn btn-danger btn-small" style="margin-left: 10px;"><i class="fas fa-power-off"></i> Keluar</button>
@@ -221,14 +219,11 @@
                     <h3>B. Fungsi-Fungsi Manajemen Dasar (POAC)</h3>
                     <p>Menurut George R. Terry, fungsi manajemen dasar dalam tata kelola badan usaha terdiri dari 4 tahap utama (POAC):</p>
                     <ul>
-                        <li><strong>Planning (Perencanaan):</strong> Penentuan tujuan utama badan usaha. Penyusunan strategi dan langkah-langkah untuk mencapai tujuan tersebut. Menentukan target pasar, proyeksi pendapatan, dan kebutuhan modal.</li>
-                        <li><strong>Organizing (Pengorganisasian):</strong> Pembagian kerja dan tugas kepada setiap individu atau divisi. Penempatan karyawan sesuai dengan keahliannya (the right man on the right place). Pembuatan struktur organisasi badan usaha.</li>
-                        <li><strong>Actuating (Penggerakan / Pelaksanaan):</strong> Pemberian motivasi, arahan, dan bimbingan kepada karyawan. Kepemimpinan manajer dalam memengaruhi bawahan agar bekerja dengan antusias. Membangun komunikasi yang baik di dalam badan usaha.</li>
-                        <li><strong>Controlling (Pengawasan / Pengendalian):</strong> Evaluasi kinerja karyawan dan jalannya operasional. Mencocokkan hasil kerja nyata dengan rencana awal (target). Melakukan tindakan perbaikan (koreksi) jika ditemukan kesalahan atau penyimpangan.</li>
+                        <li><strong>Planning (Perencanaan):</strong> Penentuan tujuan utama badan usaha dan penyusunan strategi pencapaiannya.</li>
+                        <li><strong>Organizing (Pengorganisasian):</strong> Pembagian kerja dan penempatan karyawan sesuai keahliannya.</li>
+                        <li><strong>Actuating (Penggerakan / Pelaksanaan):</strong> Pemberian motivasi, arahan, dan kepemimpinan kepada karyawan.</li>
+                        <li><strong>Controlling (Pengawasan / Pengendalian):</strong> Evaluasi kinerja dan pencocokan hasil kerja nyata dengan target.</li>
                     </ul>
-
-                    <h3>C. Tata Kelola Badan Usaha</h3>
-                    <p>Tata kelola adalah aturan main, prosedur, dan sistem yang diterapkan untuk memastikan badan usaha berjalan sehat. Fungsi tata kelola membedakan secara tegas antara bentuk badan usaha (sebagai entitas hukum/pemilik modal) dengan perusahaan (sebagai alat/unit produksi pencetak barang atau jasa).</p>
                 </div>
             </div>
 
@@ -246,18 +241,13 @@
 
                 <div class="materi-box">
                     <h3>A. Memahami Tantangan Badan Usaha Lokal</h3>
-                    <p>Pelaku usaha di lapangan sering dihadapkan pada dua jenis tantangan utama:</p>
-                    <ul>
-                        <li><strong>Tantangan Manajerial:</strong> Masalah yang berkaitan dengan tata kelola, sumber daya manusia, kepemimpinan, dan sistem administrasi. (Contoh: Pegawai bolos, kasir tidak jujur, pembukuan berantakan).</li>
-                        <li><strong>Tantangan Operasional:</strong> Masalah yang berkaitan dengan teknis produksi, ketersediaan bahan baku, dan peralatan sehari-hari. (Contoh: Mesin produksi rusak, harga bahan baku naik).</li>
-                    </ul>
-
-                    <h3>B. Langkah-Langkah Perumusan Solusi (Problem-Solving) Berbasis Data</h3>
+                    <p>Pelaku usaha di lapangan sering dihadapkan pada tantangan manajerial (tata kelola & SDM) dan tantangan operasional (teknis produksi & bahan baku).</p>
+                    <h3>B. Langkah-Langkah Problem-Solving Berbasis Data</h3>
                     <ol>
-                        <li><strong>Identifikasi Masalah (Define the Problem):</strong> Menemukan akar permasalahan yang sebenarnya secara spesifik.</li>
-                        <li><strong>Pengumpulan Data Lapangan (Data Gathering):</strong> Mewawancarai pelanggan, mengecek catatan pembukuan, atau memantau harga dari supplier.</li>
-                        <li><strong>Pengembangan Alternatif Solusi (Generate Alternatives):</strong> Merumuskan lebih dari satu jalan keluar.</li>
-                        <li><strong>Pengambilan Keputusan & Evaluasi (Decision Making & Evaluation):</strong> Memilih solusi yang risikonya paling kecil dan keuntungannya paling besar.</li>
+                        <li>Identifikasi Masalah secara spesifik.</li>
+                        <li>Pengumpulan Data Lapangan.</li>
+                        <li>Pengembangan Alternatif Solusi.</li>
+                        <li>Pengambilan Keputusan & Evaluasi.</li>
                     </ol>
                 </div>
             </div>
@@ -265,67 +255,43 @@
             <!-- ========= VIEW: EVALUASI (LKPD, SOAL, REFLEKSI) ========= -->
             <div id="view-evaluasi" class="view-section">
                 <h2 class="section-title"><i class="fas fa-edit"></i> Lembar Evaluasi & Ujian</h2>
-                <p>Jawablah seluruh pertanyaan di bawah ini dengan tepat. Tombol pengiriman (Hitung Skor) berada di bagian paling bawah halaman.</p>
+                <p>Jawablah seluruh pertanyaan di bawah ini dengan tepat.</p>
 
-                <!-- LKPD TP 3 -->
                 <h3 class="sub-title">1. LKPD TP 3: Membedah Tata Kelola Usaha</h3>
-                <p>Lakukan observasi pada usaha di sekitar. Analisis berdasarkan POAC:</p>
-                <textarea class="jawaban-esai" placeholder="Ketik hasil analisis Planning, Organizing, Actuating, dan Controlling di sini..."></textarea>
+                <textarea class="jawaban-esai" placeholder="Ketik hasil analisis POAC di sini..."></textarea>
 
-                <!-- LKPD TP 4 -->
                 <h3 class="sub-title">2. LKPD TP 4: Problem-Solving UMKM Lokal</h3>
-                <p><strong>Studi Kasus:</strong> Sebuah "Ayam Geprek" antrean mengular 20 menit per orang. Di dapur hanya 1 orang menggoreng, 1 orang menumbuk sambal sekaligus kasir. Identifikasi masalah, buat 3 alternatif solusi, dan pilih 1 yang terbaik!</p>
                 <textarea class="jawaban-esai" placeholder="Ketik identifikasi masalah dan solusinya di sini..."></textarea>
 
-                <!-- SOAL PILIHAN GANDA TP 3 & TP 4 -->
                 <h3 class="sub-title">3. Soal Pilihan Ganda (20 Soal)</h3>
-                <div id="pg-container">
-                    <!-- Soal PG di-generate via JavaScript agar ringkas -->
-                </div>
+                <div id="pg-container"></div>
 
-                <!-- SOAL ESAI TP 3 & TP 4 -->
                 <h3 class="sub-title">4. Soal Esai (10 Soal)</h3>
-                <div id="esai-container">
-                    <!-- Soal Esai di-generate via JavaScript -->
-                </div>
+                <div id="esai-container"></div>
 
-                <!-- REFLEKSI SISWA -->
                 <div id="refleksi-siswa-section">
                     <h3 class="sub-title" style="color:var(--success);"><i class="fas fa-smile"></i> Refleksi Siswa</h3>
                     <div class="question-card">
-                        <p><strong>TP3:</strong> Dari keempat fungsi manajemen (POAC), manakah yang paling sulit diterapkan jika kamu pemimpin usaha? Pernah menerapkannya?</p>
-                        <textarea class="jawaban-esai" placeholder="Tuliskan refleksimu..."></textarea>
-                    </div>
-                    <div class="question-card">
-                        <p><strong>TP4:</strong> Saat merumuskan solusi, apakah kamu cenderung memikirkan solusi tambah biaya atau maksimalkan alat? Seberapa penting data?</p>
+                        <p><strong>TP3:</strong> Dari keempat fungsi manajemen (POAC), manakah yang paling sulit diterapkan?</p>
                         <textarea class="jawaban-esai" placeholder="Tuliskan refleksimu..."></textarea>
                     </div>
                 </div>
 
-                <!-- REFLEKSI GURU (HANYA MUNCUL JIKA LOGIN ADMIN) -->
                 <div id="refleksi-guru-section" style="display:none;">
                     <h3 class="sub-title" style="color:var(--danger);"><i class="fas fa-chalkboard-teacher"></i> Refleksi Guru (Admin Only)</h3>
                     <div class="question-card">
-                        <p><strong>TP3:</strong> Apakah siswa mampu membedakan Planning dan Organizing? Metode sudah tepat?</p>
-                        <textarea class="jawaban-esai" placeholder="Tuliskan catatan guru..."></textarea>
-                    </div>
-                    <div class="question-card">
-                        <p><strong>TP4:</strong> Apakah siswa mampu merumuskan solusi logis? Sejauh mana nalar kritis mereka?</p>
+                        <p><strong>TP3:</strong> Apakah siswa mampu membedakan Planning dan Organizing?</p>
                         <textarea class="jawaban-esai" placeholder="Tuliskan catatan guru..."></textarea>
                     </div>
                 </div>
 
-                <!-- KUNCI JAWABAN (HANYA MUNCUL JIKA LOGIN ADMIN) -->
                 <div id="kunci-jawaban-section" class="kunci-jawaban">
                     <h3><i class="fas fa-key"></i> Kunci Jawaban Pilihan Ganda</h3>
                     <p><strong>TP 3:</strong> 1.B, 2.D, 3.A, 4.C, 5.C, 6.D, 7.B, 8.B, 9.B, 10.C</p>
                     <p><strong>TP 4:</strong> 1.C, 2.D, 3.D, 4.B, 5.C, 6.B, 7.D, 8.C, 9.B, 10.C</p>
                 </div>
 
-                <!-- TOMBOL ACTION EVALUASI -->
-                <div id="action-evaluasi" style="margin-top: 40px; text-align: center;">
-                    <!-- Tombol ini diganti dinamis via JS. Siswa = Hitung Skor, Admin = Tidak Ada -->
-                </div>
+                <div id="action-evaluasi" style="margin-top: 40px; text-align: center;"></div>
             </div>
 
             <!-- ========= VIEW: KELOLA SISWA (ADMIN ONLY) ========= -->
@@ -349,20 +315,18 @@
                                 <th>Nama Lengkap</th>
                                 <th>Kelas</th>
                                 <th>Role</th>
-                                <th>Aksi (Password Default: 12345678)</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
-                        <tbody id="tabel-siswa-body">
-                            <!-- Diisi via JS -->
-                        </tbody>
+                        <tbody id="tabel-siswa-body"></tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- ========= VIEW: REKAP NILAI LOKAL (ADMIN ONLY) ========= -->
+            <!-- ========= VIEW: REKAP NILAI (KELAS) ========= -->
             <div id="view-rekap-nilai" class="view-section">
-                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Rekap Nilai Siswa (Lokal)</h2>
-                <p>Data di bawah ini tersimpan di memori browser. Namun, setiap nilai yang disubmit siswa juga otomatis terkirim ke Google Sheets Guru.</p>
+                <h2 class="section-title"><i class="fas fa-clipboard-list"></i> Rekap Nilai Siswa (Leaderboard Kelas)</h2>
+                <p>Data di bawah ini disinkronkan langsung secara *real-time* dari Google Sheets.</p>
                 <div class="table-responsive">
                     <table>
                         <thead>
@@ -370,13 +334,12 @@
                                 <th>Waktu Submit</th>
                                 <th>Nama Lengkap</th>
                                 <th>Kelas</th>
-                                <th>Nilai (Skor)</th>
-                                <th>Nilai Huruf</th>
+                                <th>Nilai Total</th>
                                 <th>Keterangan</th>
                             </tr>
                         </thead>
                         <tbody id="tabel-rekap-body">
-                            <!-- Diisi via JS -->
+                            <tr><td colspan="5" style="text-align:center;">Memuat data dari Google Sheets...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -387,15 +350,11 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // --- URL GOOGLE APPS SCRIPT BRO (SUDAH DIINTEGRASIKAN) ---
+        // --- URL GOOGLE APPS SCRIPT BRO (Ganti jika URL baru berbeda) ---
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxL8r9cTU9tKC2Bq2yKE2Z_gCgGo0za6ej1Wccc-wfMDcg-oyrArbG6PKONnUDHRynmRg/exec";
-        
-        // --- IDENTITAS KODE TP (Pembeda antar Bab/Materi) ---
         const KODE_TP = "TP 3 & TP 4";
 
-        // --- DATA SOAL PILIHAN GANDA ---
         const soalPG = [
-            // TP 3
             { t: "TP3", q: "1. Proses menetapkan tujuan dan langkah-langkah yang harus dilakukan untuk mencapainya dalam sebuah badan usaha disebut...", opts: ["Organizing", "Planning", "Actuating", "Controlling", "Evaluating"], ans: 1 },
             { t: "TP3", q: "2. Menempatkan pegawai sesuai dengan keahlian yang dimilikinya merupakan wujud dari penerapan fungsi...", opts: ["Perencanaan", "Pengawasan", "Pelaksanaan", "Pengorganisasian", "Pembiayaan"], ans: 3 },
             { t: "TP3", q: "3. Pemimpin memberikan arahan, motivasi, dan semangat kerja kepada bawahan agar target perusahaan tercapai. Hal ini merupakan fungsi...", opts: ["Actuating", "Controlling", "Organizing", "Planning", "Directing"], ans: 0 },
@@ -406,8 +365,6 @@
             { t: "TP3", q: "8. Kepala toko menegur kasir yang salah dan mengajarinya cara yang benar. Tindakan ini mencakup fungsi...", opts: ["Planning dan Organizing", "Actuating dan Controlling", "Organizing dan Actuating", "Planning dan Controlling", "Organizing saja"], ans: 1 },
             { t: "TP3", q: "9. Hubungan yang tepat antara badan usaha dan fungsi tata kelolanya adalah...", opts: ["Tidak diperlukan jika kecil", "Memastikan prosedur berjalan tanpa manipulasi", "Hanya mengatur besaran gaji", "Sepenuhnya dijalankan oleh mesin", "Menghambat inovasi pengusaha"], ans: 1 },
             { t: "TP3", q: "10. Mengevaluasi hasil kerja yang telah dicapai lalu mencocokkannya dengan target awal disebut...", opts: ["Penempatan", "Pelaksanaan", "Pengawasan", "Perencanaan", "Pembagian tugas"], ans: 2 },
-            
-            // TP 4
             { t: "TP4", q: "11. Kesulitan pabrik dalam mendapatkan pasokan kedelai karena gagal panen merupakan jenis tantangan...", opts: ["Manajerial", "Administratif", "Operasional", "Pemasaran", "Personalia"], ans: 2 },
             { t: "TP4", q: "12. Pembukuan keuangan tidak sesuai karena kasir tidak teliti. Ini tergolong masalah...", opts: ["Operasional", "Distribusi", "Eksternal", "Manajerial", "Produksi"], ans: 3 },
             { t: "TP4", q: "13. Langkah pertama yang harus dilakukan dalam merumuskan solusi (problem-solving) adalah...", opts: ["Mengembangkan alternatif", "Mengevaluasi keputusan", "Memecat karyawan", "Mengidentifikasi masalah secara spesifik", "Mengumpulkan uang"], ans: 3 },
@@ -433,16 +390,14 @@
             "10. (TP4) Mengapa dalam mengembangkan solusi, pengusaha disarankan memiliki alternatif (Rencana A, Rencana B)?"
         ];
 
-        // --- SISTEM PENYIMPANAN LOCALSTORAGE ---
         let users = JSON.parse(localStorage.getItem('eco_users')) || [
             { id: 1, name: 'Bapak/Ibu Guru', role: 'Admin', kelas: 'Grade 11', password: '12345678' },
             { id: 2, name: 'Siswa Contoh', role: 'Siswa', kelas: 'Grade 11', password: '12345678' }
         ];
         
-        let scores = JSON.parse(localStorage.getItem('eco_scores')) || [];
+        let scores = [];
         let currentUser = null;
 
-        // Render Dropdown Username di Halaman Login
         function updateUserDropdown() {
             const role = document.getElementById('login-role').value;
             const selectName = document.getElementById('login-name');
@@ -458,13 +413,12 @@
             });
         }
 
-        // --- INISIALISASI HALAMAN ---
         window.onload = () => {
             updateUserDropdown();
             renderSoal();
+            ambilDataSheets(); // Ambil rekap dari Google Sheets saat halaman dibuka
         };
 
-        // Render Soal ke HTML
         function renderSoal() {
             const pgContainer = document.getElementById('pg-container');
             let pgHTML = '';
@@ -491,7 +445,6 @@
             esaiContainer.innerHTML = esaiHTML;
         }
 
-        // --- LOGIKA LOGIN ---
         function prosesLogin() {
             const role = document.getElementById('login-role').value;
             const name = document.getElementById('login-name').value;
@@ -502,22 +455,14 @@
             if(!pass) { alert("Silakan masukkan password!"); return; }
 
             const user = users.find(u => u.name === name && u.role === role && u.kelas === kelas);
-            
-            if(!user) {
-                alert("Data tidak ditemukan! Pastikan Jabatan, Nama, dan Kelas sesuai.");
+            if(!user || user.password !== pass) {
+                alert("Data atau Password salah!");
                 return;
             }
 
-            if(user.password !== pass) {
-                alert("Password salah!");
-                return;
-            }
-
-            // Sukses Login
             currentUser = user;
             setupDashboard();
             
-            // Animasi Transisi
             document.getElementById('login-section').style.display = 'none';
             document.getElementById('app-section').style.display = 'block';
             document.getElementById('display-username').innerText = `${currentUser.name} (${currentUser.kelas})`;
@@ -531,46 +476,33 @@
             updateUserDropdown();
         }
 
-        // --- SETUP DASHBOARD BERDASARKAN ROLE ---
         function setupDashboard() {
             const navContainer = document.getElementById('nav-links-container');
             navContainer.innerHTML = '';
             
-            // Menu Umum
             navContainer.innerHTML += `<div class="nav-item active" onclick="switchView('view-tp3', this)">Materi TP 3</div>`;
             navContainer.innerHTML += `<div class="nav-item" onclick="switchView('view-tp4', this)">Materi TP 4</div>`;
             navContainer.innerHTML += `<div class="nav-item" onclick="switchView('view-evaluasi', this)">Evaluasi & Soal</div>`;
+            navContainer.innerHTML += `<div class="nav-item" onclick="switchView('view-rekap-nilai', this)">Rekap Nilai Kelas</div>`;
 
             const btnAction = document.getElementById('action-evaluasi');
 
             if(currentUser.role === 'Admin') {
-                // Tambahan Menu Admin
                 navContainer.innerHTML += `<div class="nav-item" onclick="switchView('view-kelola-siswa', this)">Kelola Siswa</div>`;
-                navContainer.innerHTML += `<div class="nav-item" onclick="switchView('view-rekap-nilai', this)">Rekap Nilai</div>`;
-                
-                // Buka Kunci Jawaban & Refleksi Guru
                 document.getElementById('kunci-jawaban-section').style.display = 'block';
                 document.getElementById('refleksi-guru-section').style.display = 'block';
-                
-                // Admin tidak butuh tombol Hitung Skor di tab evaluasi
-                btnAction.innerHTML = `<p style="color:var(--danger); font-weight:bold;">Admin tidak perlu mensubmit nilai. Silakan cek Rekap Nilai.</p>`;
-                
+                btnAction.innerHTML = `<p style="color:var(--danger); font-weight:bold;">Admin tidak perlu mensubmit nilai.</p>`;
                 renderTabelSiswa();
-                renderRekapNilai();
             } else {
-                // Siswa Hide Admin Stuffs
                 document.getElementById('kunci-jawaban-section').style.display = 'none';
                 document.getElementById('refleksi-guru-section').style.display = 'none';
-                
-                // Tombol Hitung Skor Siswa
-                btnAction.innerHTML = `<button id="btnSubmitScore" onclick="hitungSkor()" class="btn btn-success" style="font-size:1.2rem; padding: 15px 40px; border-radius: 30px;"><i class="fas fa-paper-plane"></i> Hitung Skor & Simpan Rekap</button>`;
+                btnAction.innerHTML = `<button id="btnSubmitScore" onclick="hitungSkor()" class="btn btn-success" style="font-size:1.2rem; padding: 15px 40px; border-radius: 30px;"><i class="fas fa-paper-plane"></i> Hitung Skor & Kirim ke Google Sheets</button>`;
             }
 
-            // Default View
             switchView('view-tp3', navContainer.children[0]);
+            ambilDataSheets();
         }
 
-        // --- NAVIGASI ANTAR MENU ---
         function switchView(viewId, el) {
             document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -578,9 +510,12 @@
             document.getElementById(viewId).classList.add('active');
             if(el) el.classList.add('active');
             window.scrollTo(0, 0);
+            
+            if(viewId === 'view-rekap-nilai') {
+                ambilDataSheets(); // Refresh data saat menu rekap dibuka
+            }
         }
 
-        // --- FITUR ADMIN: KELOLA SISWA ---
         function simpanDataUsers() {
             localStorage.setItem('eco_users', JSON.stringify(users));
         }
@@ -596,9 +531,9 @@
                         <td>${u.kelas}</td>
                         <td><span class="badge ${u.role === 'Admin' ? 'badge-remedial' : 'badge-tuntas'}">${u.role}</span></td>
                         <td>
-                            <button class="btn btn-warning btn-small" onclick="editSiswa(${u.id})"><i class="fas fa-edit"></i> Edit</button>
-                            <button class="btn btn-primary btn-small" onclick="resetPassword(${u.id})"><i class="fas fa-key"></i> Reset Pass</button>
-                            <button class="btn btn-danger btn-small" onclick="hapusSiswa(${u.id})"><i class="fas fa-trash"></i> Hapus</button>
+                            <button class="btn btn-warning btn-small" onclick="editSiswa(${u.id})">Edit</button>
+                            <button class="btn btn-primary btn-small" onclick="resetPassword(${u.id})">Reset</button>
+                            <button class="btn btn-danger btn-small" onclick="hapusSiswa(${u.id})">Hapus</button>
                         </td>
                     </tr>
                 `;
@@ -616,11 +551,11 @@
             document.getElementById('new-siswa-name').value = '';
             simpanDataUsers();
             renderTabelSiswa();
-            alert("Siswa berhasil ditambahkan dengan Password Default 12345678");
+            alert("Siswa berhasil ditambahkan!");
         }
 
         function hapusSiswa(id) {
-            if(confirm("Yakin ingin menghapus user ini?")) {
+            if(confirm("Yakin ingin menghapus?")) {
                 users = users.filter(u => u.id !== id);
                 simpanDataUsers();
                 renderTabelSiswa();
@@ -628,98 +563,87 @@
         }
 
         function resetPassword(id) {
-            if(confirm("Reset password user ini menjadi 12345678?")) {
+            if(confirm("Reset password menjadi 12345678?")) {
                 const user = users.find(u => u.id === id);
-                if(user) {
-                    user.password = '12345678';
-                    simpanDataUsers();
-                    alert(`Password ${user.name} berhasil di-reset.`);
-                }
+                if(user) { user.password = '12345678'; simpanDataUsers(); alert("Password direset."); }
             }
         }
 
         function editSiswa(id) {
             const user = users.find(u => u.id === id);
             if(user) {
-                const newName = prompt("Edit Nama Lengkap:", user.name);
-                if(newName && newName.trim() !== '') {
-                    user.name = newName.trim();
-                    simpanDataUsers();
-                    renderTabelSiswa();
-                }
+                const newName = namaBaru = prompt("Edit Nama Lengkap:", user.name);
+                if(newName && newName.trim() !== '') { user.name = newName.trim(); simpanDataUsers(); renderTabelSiswa(); }
             }
         }
 
-        // --- FITUR SISWA: HITUNG SKOR & KIRIM KE GOOGLE SHEETS ---
+        // --- AMBIL REKAP DARI GOOGLE SHEETS ---
+        function ambilDataSheets() {
+            fetch(SCRIPT_URL)
+            .then(res => res.json())
+            .then(data => {
+                if(data.status === "success" && data.scores) {
+                    scores = data.scores;
+                    renderRekapNilai();
+                }
+            })
+            .catch(err => console.log("Gagal memuat rekap online:", err));
+        }
+
+        // --- KIRIM NILAI KE GOOGLE SHEETS & TAMPILKAN REKAP ---
         function hitungSkor() {
             let skorPG = 0;
             let terjawabPG = 0;
             const btnSubmit = document.getElementById('btnSubmitScore');
             
-            // Hitung 20 Soal PG (Masing-masing 5 Poin = Max 100 Poin)
             soalPG.forEach((s, idx) => {
                 const selected = document.querySelector(`input[name="pg_${idx}"]:checked`);
                 if(selected) {
                     terjawabPG++;
-                    if(parseInt(selected.value) === s.ans) {
-                        skorPG += 5; // 20 * 5 = 100
-                    }
+                    if(parseInt(selected.value) === s.ans) { skorPG += 5; }
                 }
             });
 
             if(terjawabPG < 20) {
-                if(!confirm(`Kamu baru menjawab ${terjawabPG} dari 20 soal Pilihan Ganda. Yakin ingin mengumpulkan sekarang?`)) {
-                    return;
-                }
+                if(!confirm(`Kamu baru menjawab ${terjawabPG} dari 20 soal Pilihan Ganda. Yakin ingin mengumpulkan sekarang?`)) { return; }
             }
 
-            // Tentukan Huruf & Keterangan
-            let huruf = 'D';
-            let ket = 'REMEDIAL';
-            if(skorPG >= 90) { huruf = 'A'; ket = 'TUNTAS'; }
-            else if(skorPG >= 81) { huruf = 'B'; ket = 'TUNTAS'; }
-            else if(skorPG >= 70) { huruf = 'C'; ket = 'TUNTAS'; }
+            let ket = skorPG >= 70 ? 'TUNTAS' : 'REMEDIAL';
 
-            const waktu = new Date().toLocaleString('id-ID');
-            
-            // 1. Simpan ke Rekap Nilai LocalStorage (Bisa dilihat langsung di Web)
-            scores.push({
-                waktu: waktu,
-                name: currentUser.name,
-                kelas: currentUser.kelas,
-                score: skorPG,
-                grade: huruf,
-                status: ket
-            });
-            localStorage.setItem('eco_scores', JSON.stringify(scores));
-
-            // Ubah tombol jadi loading
             if(btnSubmit) {
                 btnSubmit.disabled = true;
-                btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Menyimpan ke Google Sheets...';
+                btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim ke Google Sheets...';
             }
 
-            // 2. KIRIM KE GOOGLE SHEETS VIA APPS SCRIPT
             const payload = {
                 nama: currentUser.name,
                 kelas: currentUser.kelas,
-                kode_tp: KODE_TP, // Pembeda Materi
-                nilai: skorPG,
+                nilai_lkpd: 0,
+                nilai_pg: skorPG,
+                nilai_memadukan: 0,
+                nilai_esai: 0,
+                nilai_total: skorPG,
                 keterangan: ket
             };
 
             fetch(SCRIPT_URL, {
                 method: "POST",
-                mode: "no-cors",
                 headers: { "Content-Type": "text/plain" },
                 body: JSON.stringify(payload)
-            }).then(() => {
-                alert(`SKOR ANDA: ${skorPG} (Nilai ${huruf} - ${ket})\n\nNilai otomatis tersimpan di Web & Google Sheets Guru!`);
-                document.getElementById('action-evaluasi').innerHTML = `<p style="color:var(--success); font-weight:bold; font-size:1.2rem;"><i class="fas fa-check-double"></i> Jawaban dan Skor telah berhasil dikirim ke Google Sheets Admin.</p>`;
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert(`SKOR ANDA: ${skorPG} (${ket})\n\nNilai berhasil dikirim dan disinkronkan dengan Google Sheets!`);
+                if(data.scores) {
+                    scores = data.scores;
+                    renderRekapNilai();
+                }
+                document.getElementById('action-evaluasi').innerHTML = `<p style="color:var(--success); font-weight:bold; font-size:1.2rem;"><i class="fas fa-check-double"></i> Jawaban Anda telah terekam di Google Sheets Kelas!</p>`;
                 window.scrollTo(0, document.body.scrollHeight);
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.error("Error:", err);
-                alert("Nilai tersimpan di lokal, namun gagal terhubung ke jaringan Google Sheets.");
+                alert("Gagal mengirim nilai ke Google Sheets. Periksa koneksi internet.");
                 if(btnSubmit) {
                     btnSubmit.disabled = false;
                     btnSubmit.innerHTML = '<i class="fas fa-paper-plane"></i> Coba Kirim Ulang';
@@ -727,19 +651,18 @@
             });
         }
 
-        // --- FITUR ADMIN: REKAP NILAI LOKAL ---
+        // --- RENDER TABEL REKAP KELAS ---
         function renderRekapNilai() {
             const tbody = document.getElementById('tabel-rekap-body');
+            if(!tbody) return;
             tbody.innerHTML = '';
             
-            if(scores.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Belum ada data ujian masuk.</td></tr>`;
+            if(!scores || scores.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">Belum ada data nilai yang masuk.</td></tr>`;
                 return;
             }
 
-            // Urutkan dari yang terbaru
             const sortedScores = [...scores].reverse();
-            
             sortedScores.forEach(s => {
                 const badgeClass = s.status === 'TUNTAS' ? 'badge-tuntas' : 'badge-remedial';
                 tbody.innerHTML += `
@@ -748,7 +671,6 @@
                         <td style="font-weight:600;">${s.name}</td>
                         <td>${s.kelas}</td>
                         <td style="font-weight:bold; color:var(--primary); font-size:1.1rem;">${s.score}</td>
-                        <td><strong>${s.grade}</strong></td>
                         <td><span class="badge ${badgeClass}">${s.status}</span></td>
                     </tr>
                 `;
