@@ -165,9 +165,7 @@
             </div>
             <div class="form-group">
                 <label>Nama Pengguna</label>
-                <select id="login-name" class="form-control">
-                    <!-- Diisi dinamis via JS -->
-                </select>
+                <select id="login-name" class="form-control"></select>
             </div>
             <div class="form-group">
                 <label>Kelas</label>
@@ -350,7 +348,6 @@
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // --- URL GOOGLE APPS SCRIPT BRO (Ganti jika URL baru berbeda) ---
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxL8r9cTU9tKC2Bq2yKE2Z_gCgGo0za6ej1Wccc-wfMDcg-oyrArbG6PKONnUDHRynmRg/exec";
         const KODE_TP = "TP 3 & TP 4";
 
@@ -416,7 +413,7 @@
         window.onload = () => {
             updateUserDropdown();
             renderSoal();
-            ambilDataSheets(); // Ambil rekap dari Google Sheets saat halaman dibuka
+            ambilDataSheets();
         };
 
         function renderSoal() {
@@ -512,7 +509,7 @@
             window.scrollTo(0, 0);
             
             if(viewId === 'view-rekap-nilai') {
-                ambilDataSheets(); // Refresh data saat menu rekap dibuka
+                ambilDataSheets();
             }
         }
 
@@ -572,12 +569,11 @@
         function editSiswa(id) {
             const user = users.find(u => u.id === id);
             if(user) {
-                const newName = namaBaru = prompt("Edit Nama Lengkap:", user.name);
+                const newName = prompt("Edit Nama Lengkap:", user.name);
                 if(newName && newName.trim() !== '') { user.name = newName.trim(); simpanDataUsers(); renderTabelSiswa(); }
             }
         }
 
-        // --- AMBIL REKAP DARI GOOGLE SHEETS ---
         function ambilDataSheets() {
             fetch(SCRIPT_URL)
             .then(res => res.json())
@@ -590,7 +586,6 @@
             .catch(err => console.log("Gagal memuat rekap online:", err));
         }
 
-        // --- KIRIM NILAI KE GOOGLE SHEETS & TAMPILKAN REKAP ---
         function hitungSkor() {
             let skorPG = 0;
             let terjawabPG = 0;
@@ -651,7 +646,6 @@
             });
         }
 
-        // --- RENDER TABEL REKAP KELAS ---
         function renderRekapNilai() {
             const tbody = document.getElementById('tabel-rekap-body');
             if(!tbody) return;
